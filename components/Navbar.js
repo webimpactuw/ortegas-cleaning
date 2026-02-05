@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo_hallow from "../public/logo_hallow.png";
 
 // Placeholder code to start Navbar; can be changed
+// TODO: Book Now button should be its own component
 export default function Navbar() {
   return (
     <nav className="flex justify-between items-center p-4 border-b">
