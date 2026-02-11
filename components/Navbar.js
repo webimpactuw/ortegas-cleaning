@@ -6,10 +6,10 @@ import logo_hallow from "../public/logo_hallow.png";
 // TODO: Book Now button should be its own component
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-4 border-b bg-[#e6e7eb]">
-      <Link href="/"><Image src={logo_hallow} alt="Home" width={64} height={64} className="h-12 w-auto object-contain" /></Link>
+    <nav className="flex justify-between items-center p-3 pr-8 border-b bg-[#e6e7eb]">
+      <Link href="/"><Image src={logo_hallow} alt="Home" width={64} height={64} className="h-14 w-auto object-contain" /></Link>
 
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-8 items-center text-[#224a60] text-[1.2rem]">
         <Link href="/services">Services</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/about">About</Link>
