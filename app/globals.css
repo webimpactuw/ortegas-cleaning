@@ -5,7 +5,8 @@
   --foreground: #111111;
   --color-navbar-bg: #FFFEF8;
   --color-brand-blue: #4A90E2;
-  --gradient-btn: linear-gradient(to right, #2C3E50, var(--color-brand-blue));
+  --color-brand-dark: #2C3E50;
+  --gradient-btn: linear-gradient(to right, var(--color-brand-dark), var(--color-brand-blue));
 }
 
 @theme inline {
