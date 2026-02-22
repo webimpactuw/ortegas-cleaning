@@ -13,7 +13,8 @@ export default function Hero() {
                 cleaning services across King County
             </div>
 
-            <Link href="/contact">Get Your Free Quote</Link>
+            <Link className="px-8 py-4 bg-linear-to-r from-[#2C3E50] to-[#4A90E2] rounded-[16px] text-white" 
+                href="/contact">Get Your Free Quote</Link>
         </div>
     );
 }
