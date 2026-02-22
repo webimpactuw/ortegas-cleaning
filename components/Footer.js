@@ -20,7 +20,7 @@ export default function Footer() {
           <Image src={logo} alt="Logo" width={48} height={48} className="h-24 w-auto object-contain"/>
         </div>
 
-        <FooterColumn>
+        <FooterColumn title="Address">
           <p>123 St</p>
           <p>Auburn, Washington</p>
           <p>XXXXX</p>
