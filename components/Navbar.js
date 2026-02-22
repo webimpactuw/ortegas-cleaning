@@ -4,7 +4,6 @@ import logo from "../public/logo_hallow.png";
 import BookNow from "./buttons/BookNow";
 
 // Placeholder code to start Navbar; can be changed
-// TODO: Book Now button should be its own component
 export default function Navbar() {
   return (
     <nav className="flex justify-between items-center px-4" style={{ background: "var(--color-navbar-bg)" }}>
