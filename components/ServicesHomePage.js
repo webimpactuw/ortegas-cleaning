@@ -1,12 +1,19 @@
 import ServiceCard from "./ServiceCard";
 import House from "../public/House.svg";
 import Building from "../public/Building.svg";
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function ServicesHomePage() {
   return (
     <div className="flex flex-col items-center">
-      <h3 className="font-[Playfair_Display] font-semibold text-[44px] leading-[40px] tracking-[0px] text-center text-[#2E4E65] mb-4">Our Services</h3>
-      <p className="font-[inter] font-normal text-[20px] leading-[28px] tracking-[0px] text-center text-[#4A4A4ACC] mb-6">Tailored cleaning services designed to meet your specific needs</p>
+      <h3 className="font-[Playfair_Display] font-semibold text-4xl leading-[40px] tracking-normal text-center text-[#2E4E65] mb-4">
+        Our Services
+      </h3>
+      <p className="font-[inter] font-normal text-lg leading-7 tracking-normal text-center text-[#4A4A4ACC] mb-6">
+        Tailored cleaning services designed to meet your specific needs
+      </p>
       <div className="flex">
         <ServiceCard
           icon={House}
