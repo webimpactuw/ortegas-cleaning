@@ -57,24 +57,26 @@ export default function ServiceMap({ areas, selectedArea }) {
   if (!isMounted) return null;
 
   return (
-    <MapContainer
-      center={[47.6062, -122.3321]}
-      zoom={11}
-      scrollWheelZoom={true}
-      style={{ height: "500px", width: "100%" }}
-    >
-      <TileLayer
-        attribution="&copy; OpenStreetMap contributors"
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+    <div className="bg-[#FFFEF8] p-4 rounded-2xl overflow-hidden shadow-lg">
+        <MapContainer
+            center={[47.6062, -122.3321]}
+            zoom={11}
+            scrollWheelZoom={true}
+            className="h-125 w-full rounded-2xl"
+        >
+        <TileLayer
+            attribution="&copy; OpenStreetMap contributors"
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
-      {areas.map((area) => (
-        <Marker key={area.name} position={area.coords}>
-          <Popup>{area.name}</Popup>
-        </Marker>
-      ))}
+        {areas.map((area) => (
+            <Marker key={area.name} position={area.coords}>
+            <Popup>{area.name}</Popup>
+            </Marker>
+        ))}
 
-      {selectedArea && <MapUpdater selectedArea={selectedArea} />}
-    </MapContainer>
+        {selectedArea && <MapUpdater selectedArea={selectedArea} />}
+        </MapContainer>
+    </div>
   );
 }

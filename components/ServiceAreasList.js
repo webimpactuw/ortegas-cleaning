@@ -1,5 +1,6 @@
 "use client";
 
+import DontSeeYourAreaTile from "./DontSeeYourAreaTile";
 import MapTile from "./MapTile";
 
 export default function ServiceAreasList({ areas, onSelect }) {
@@ -13,6 +14,7 @@ export default function ServiceAreasList({ areas, onSelect }) {
           onClick={() => onSelect(area)}
         />
       ))}
+      <DontSeeYourAreaTile/>
     </ul>
   );
 }

@@ -16,16 +16,24 @@ export default function AreasWeServeSection() {
   const [selectedArea, setSelectedArea] = useState(null);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8">
-      {/* Tiles on the left */}
-      <div className="flex-1">
-        <ServiceAreasList areas={areas} onSelect={setSelectedArea} />
-      </div>
+    <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-[#214A60] text-center mb-12">
+            Areas We Serve
+        </h2>
 
-      {/* Map on the right */}
-      <div className="flex-2 min-h-[500px]">
-        <ServiceMap areas={areas} selectedArea={selectedArea} />
-      </div>
-    </div>
+        {/* Content layout*/}
+        <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Tiles on the left */}
+            <div className="flex-1">
+                <ServiceAreasList areas={areas} onSelect={setSelectedArea} />
+            </div>
+
+            {/* Map on the right */}
+            <div className="flex-2 min-h-125">
+                <ServiceMap areas={areas} selectedArea={selectedArea} />
+            </div>
+        </div>
+    </section>
   );
 }
