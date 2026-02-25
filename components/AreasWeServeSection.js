@@ -5,11 +5,23 @@ import ServiceAreasList from "./ServiceAreasList";
 import ServiceMap from "./ServiceMap";
 
 const areas = [
-  { name: "Lake Stevens, WA", coords: [48.0086, -122.1059], subtitle: "Vernon Rd and 14th St SE" },
-  { name: "Auburn, WA", coords: [47.2759, -122.2235], subtitle: "401 37th St SE" },
-  { name: "Seattle, WA", coords: [47.5784, -122.3033], subtitle: "98144 area" },
-  { name: "Abcdefgh", coords: [47.6730, -122.1215], subtitle: "321 North Road, Northside" },
-  { name: "Lmnopqrs", coords: [47.6730, -122.1215], subtitle: "654 South Lane, Southside" },
+  { name: "Auburn", coords: [47.3074, -122.2286], subtitle: "WA" },
+  { name: "Sumner", coords: [47.2031, -122.2402], subtitle: "WA" },
+  { name: "Bonney Lake", coords: [47.1773, -122.1831], subtitle: "WA" },
+  { name: "Buckley", coords: [47.1630, -122.0270], subtitle: "WA" },
+  { name: "Enumclaw", coords: [47.2042, -121.9915], subtitle: "WA" },
+  { name: "Puyallup", coords: [47.1855, -122.2931], subtitle: "WA" },
+  { name: "Covington", coords: [47.3594, -122.1168], subtitle: "WA" },
+  { name: "Black Diamond", coords: [47.3087, -122.0023], subtitle: "WA" },
+  { name: "Milton", coords: [47.2477, -122.3128], subtitle: "WA" },
+  { name: "North Tacoma", coords: [47.2798, -122.3699], subtitle: "WA" },
+  { name: "Edgewood", coords: [47.2500, -122.2936], subtitle: "WA" },
+  { name: "Lake Tapps", coords: [47.2410, -122.1852], subtitle: "WA" },
+  { name: "Orting", coords: [47.0977, -122.2039], subtitle: "WA" },
+  { name: "Lakeland Hills", coords: [47.2560, -122.2138], subtitle: "WA" },
+  { name: "Pacific", coords: [47.2644, -122.2500], subtitle: "WA" },
+  { name: "Algona", coords: [47.2791, -122.2494], subtitle: "WA" },
+
 ];
 
 export default function AreasWeServeSection() {
@@ -30,7 +42,7 @@ export default function AreasWeServeSection() {
             </div>
 
             {/* Map on the right */}
-            <div className="flex-2 min-h-125">
+            <div className="flex-2 h-150">
                 <ServiceMap areas={areas} selectedArea={selectedArea} />
             </div>
         </div>
