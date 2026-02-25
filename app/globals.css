@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #111111;
+  --footer-gradient-start: #FFF9E0;
+  --footer-gradient-end: #EFF6FF;
   --color-navbar-bg: #FFFEF8;
   --color-brand-blue: #4A90E2;
   --color-brand-dark: #2C3E50;
