@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import ServicesHomePage from "@/components/ServicesHomePage";
 import ServiceMap from "@/components/ServiceMap";
 import AreasWeServeSection from "@/components/AreasWeServeSection";
 
@@ -9,6 +10,7 @@ export default function Home() {
     <div>
         <Navbar/>
         <AreasWeServeSection/>
+        <ServicesHomePage/>
     </div>
   );
 }
