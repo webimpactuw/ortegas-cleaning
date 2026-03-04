@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function ServicesHomePage() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-36">
       <h3 className="font-[Playfair_Display] font-semibold text-4xl leading-[40px] tracking-normal text-center text-[#2E4E65] mb-4">
         Our Services
       </h3>
