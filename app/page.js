@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 import ServicesHomePage from "@/components/ServicesHomePage";
 import ServiceMap from "@/components/ServiceMap";
 import AreasWeServeSection from "@/components/AreasWeServeSection";
@@ -7,8 +8,9 @@ import AreasWeServeSection from "@/components/AreasWeServeSection";
 // home to label page; to be changed
 export default function Home() {
   return (
-    <div>
+    <div className="bg-linear-to-b from-[#EFF6FF] from-15% via-[#FFF9E0] via-50% to-[#FFFFFF] to-70%">
         <Navbar/>
+        <Hero/>
         <ServicesHomePage/>
         <AreasWeServeSection/>
     </div>
