@@ -2,6 +2,8 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesHomePage from "@/components/ServicesHomePage";
+import ServiceMap from "@/components/ServiceMap";
+import AreasWeServeSection from "@/components/AreasWeServeSection";
 
 // home to label page; to be changed
 export default function Home() {
@@ -10,8 +12,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <ServicesHomePage/>
-        home
-
+        <AreasWeServeSection/>
     </div>
   );
 }
