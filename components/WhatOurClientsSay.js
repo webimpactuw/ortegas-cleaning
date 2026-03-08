@@ -14,7 +14,7 @@ export default function WhatOurClientsSay() {
             <div>Hear from our satisfied customers</div>
             
             <Link href="#" className="rounded-[16px] text-white font-[Inter] font-[600]
-                                    font-[0.9rem] px-10 py-4 bg-[#2E4E65]">
+                                    text-[0.8rem] px-6 py-2 bg-[#2E4E65]">
                     All reviews →
             </Link>
         </div>
