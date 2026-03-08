@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import ServicesHomePage from "@/components/ServicesHomePage";
 import ServiceMap from "@/components/ServiceMap";
 import AreasWeServeSection from "@/components/AreasWeServeSection";
+import WhatOurClientsSay from "@/components/WhatOurClientsSay";
 
 // home to label page; to be changed
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero/>
         <ServicesHomePage/>
         <AreasWeServeSection/>
+        <WhatOurClientsSay/>
     </div>
   );
 }
