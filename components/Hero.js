@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Hero() {
     return (
-        <div className="flex flex-col items-center mt-[100px] gap-[16px]">
+        <div className="flex flex-col items-center mt-[80px] gap-[16px]">
 
             <Bubble size={130}  top="20%"  left="56%"/>
             <Bubble size={180}  top="32%" left="63%"/>
