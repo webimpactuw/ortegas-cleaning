@@ -6,7 +6,7 @@ import BookNow from "./buttons/BookNow";
 // Placeholder code to start Navbar; can be changed
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-4" style={{ background: "var(--color-navbar-bg)" }}>
+    <nav className="flex justify-between items-center px-4 shadow-md/20" style={{ background: "var(--color-navbar-bg)" }}>
       < Link href="/" > <Image src={logo} alt="Home" width={64} height={64} className="h-24 w-auto object-contain" /></Link >
 
       <div className="font-bold text-lg flex gap-8 items-center">
