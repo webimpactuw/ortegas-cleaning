@@ -27,7 +27,7 @@ export default function WhatOurClientsSay() {
 
 
             <Link href="#" className="rounded-[16px] text-white font-[Inter] font-[600]
-                                    text-[0.8rem] px-6 py-2 bg-[#2E4E65]">
+                                    text-[0.8rem] px-7 py-2.5 bg-[#2E4E65]">
                     All reviews →
             </Link>
         </div>
