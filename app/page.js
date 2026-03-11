@@ -5,6 +5,7 @@ import ServicesHomePage from "@/components/ServicesHomePage";
 import ServiceMap from "@/components/ServiceMap";
 import AreasWeServeSection from "@/components/AreasWeServeSection";
 import WhatOurClientsSay from "@/components/WhatOurClientsSay";
+import SpottlessSpaceBanner from "@/components/SpotlessSpaceBanner";
 
 // home to label page; to be changed
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <ServicesHomePage/>
         <AreasWeServeSection/>
         <WhatOurClientsSay/>
+        <SpottlessSpaceBanner/>
     </div>
   );
 }
