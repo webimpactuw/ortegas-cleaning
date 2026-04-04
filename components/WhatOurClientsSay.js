@@ -9,7 +9,7 @@ export default function WhatOurClientsSay() {
             
             <div className="font-[inter] text-[#4A4A4ACC]">Hear from our satisfied customers</div>
 
-            <div className="flex flex-row items-center gap-4 mt-4 mb-8">
+            <div className="flex flex-col md:flex-row items-center gap-4 mt-4 mb-8">
                 <Review numStars="5" reviewer="Sarah Mitchell" 
                 reviewText="Ortega's team transformed my home!
                     Professional, thorough, and incredibly
