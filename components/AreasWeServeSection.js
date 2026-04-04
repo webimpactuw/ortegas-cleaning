@@ -42,7 +42,7 @@ export default function AreasWeServeSection() {
             </div>
 
             {/* Map on the right */}
-            <div className="flex-2 h-150">
+            <div className="hidden md:block flex-2 h-150">
                 <ServiceMap areas={areas} selectedArea={selectedArea} />
             </div>
         </div>
