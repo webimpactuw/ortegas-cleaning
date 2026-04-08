@@ -14,7 +14,7 @@ export default function ServicesHomePage() {
       <p className="font-[inter] font-normal text-lg leading-7 tracking-normal text-center text-[#4A4A4ACC] mb-6">
         Tailored cleaning services designed to meet your specific needs
       </p>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <ServiceCard
           icon={House}
           title="House Cleaning"

@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function ServiceCard({ icon, title, description, features, borderColor }) {
   return (
-    <div className={`w-[560px] h-[478px] opacity-100 rounded-xl border ${borderColor} shadow-lg/20 mx-3 bg-white`}>
+    <div className={`opacity-100 rounded-xl border ${borderColor} shadow-lg/20 mx-3 bg-white w-[90%] h-[405px] mb-[24px] md:w-[560px] h-[478px] mb-[0px]`}>
       <div className="flex justify-center items-center w-16 h-16 mt-12 ml-8 rounded-xl bg-[#D4E2ED66]">
         <Image src={icon} alt={title}/>
       </div>
