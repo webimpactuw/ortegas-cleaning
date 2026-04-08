@@ -4,12 +4,12 @@ import Review from "./Review";
 
 export default function WhatOurClientsSay() {
     return (
-        <div className="flex flex-col items-center bg-[#FAF8F5] py-12 gap-2">
+        <div className="flex flex-col items-center bg-[#F4EBDD] py-12 gap-2">
             <h1 className="font-[Playfair_Display] text-[2.2rem] font-[600] text-[#2E4E65]">What Our Clients Say</h1>
             
             <div className="font-[inter] text-[#4A4A4ACC]">Hear from our satisfied customers</div>
 
-            <div className="flex flex-row items-center gap-4 mt-4 mb-8">
+            <div className="flex flex-col md:flex-row items-center gap-4 mt-4 mb-8">
                 <Review numStars="5" reviewer="Sarah Mitchell" 
                 reviewText="Ortega's team transformed my home!
                     Professional, thorough, and incredibly

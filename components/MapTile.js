@@ -9,8 +9,8 @@ export default function MapTile({ title, subtitle, onClick }) {
       >
         <img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png" className="w-4 h-6"></img>
         <div>
-          <h3 className="font-bold text-[#214A60]">{title}</h3>
-          <p className="text-sm text-gray-600">{subtitle}</p>
+          <h3 className="font-bold text-[#214A60] font-[inter]">{title}</h3>
+          <p className="text-sm text-gray-600 font-[inter]">{subtitle}</p>
         </div>
       </button>
     </li>
