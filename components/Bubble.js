@@ -1,4 +1,4 @@
-export default function Bubble({ size = 180, top, left, right, bottom }) {
+export default function Bubble({ size = 180, top, left, right, bottom, styleTags="" }) {
   const style = {
     position: "absolute",
     width: size,
@@ -11,7 +11,7 @@ export default function Bubble({ size = 180, top, left, right, bottom }) {
   };
 
   return (
-    <div style={style}>
+    <div style={style} className={styleTags}>
       {/* Outer ring */}
       <div
         style={{
