@@ -9,6 +9,7 @@
   --color-brand-blue: #4A90E2;
   --color-brand-dark: #2C3E50;
   --gradient-btn: linear-gradient(to right, var(--color-brand-dark), var(--color-brand-blue));
+  --gradient-bookForm: linear-gradient(135deg, var(--color-brand-dark), var(--color-brand-blue));
 }
 
 @theme inline {
