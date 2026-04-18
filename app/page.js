@@ -10,7 +10,7 @@ import SpottlessSpaceBanner from "@/components/SpotlessSpaceBanner";
 // home to label page; to be changed
 export default function Home() {
   return (
-    <div className="bg-linear-to-b from-[#EFF6FF] via-[#F9EBDC] via-20% to-[#FFFFFF] to-70%">
+    <div className="bg-linear-to-b from-[#EFF6FF] via-[#F9EBDC] via-30% to-[#FFFFFF] to-60%">
         <Navbar/>
         <Hero/>
         <ServicesHomePage/>
