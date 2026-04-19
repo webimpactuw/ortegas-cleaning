@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import hero_icon from "../public/hero_icon.png";
+import hero_icon from "../public/logo.svg";
 import Bubble from "./Bubble";
 import { Inter } from 'next/font/google'
 
