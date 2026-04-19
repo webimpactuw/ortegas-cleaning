@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/logo_hallow.png";
+import logo from "../public/logo.svg";
 import BookNow from "./buttons/BookNow";
 import { useState } from "react";
 
@@ -18,14 +18,14 @@ export default function Navbar() {
 
   return (
     <nav className="relative" style={{ background: "var(--color-navbar-bg)" }}>
-      <div className="flex justify-between items-center px-4 py-3">
+      <div className="flex justify-between items-center px-4 py-3.5">
         <Link href="/" className="shrink-0">
           <Image
             src={logo}
             alt="Home"
-            width={48}
-            height={48}
-            className="h-14 w-auto object-contain"
+            width={64}
+            height={64}
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden border-t border-gray-200 px-4 py-4 space-y-1">
+        <div className="lg:hidden border-t border-gray-200 px-4 py-3 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
