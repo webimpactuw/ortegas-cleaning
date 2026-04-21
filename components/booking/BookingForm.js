@@ -41,7 +41,6 @@ export default function BookingForm(){
         e.preventDefault();
 
         // database api
-
         try {
             const res = await fetch("/api/book", {
                 method: "POST", 
