@@ -7,7 +7,6 @@ export default function BookNow() {
       className="rounded-[8px] text-white px-6 py-2"
       style={{ background: "var(--gradient-btn)" }}
     >
-
       Book Now
     </Link >
   );
