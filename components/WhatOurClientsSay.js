@@ -26,7 +26,7 @@ export default function WhatOurClientsSay() {
             </div>
 
 
-            <Link href="#" className="rounded-[16px] text-white font-[Inter] font-[600]
+            <Link href="/reviews" className="rounded-[16px] text-white font-[Inter] font-[600]
                                     text-[0.8rem] px-7 py-2.5 bg-[#2E4E65]">
                     All reviews →
             </Link>
