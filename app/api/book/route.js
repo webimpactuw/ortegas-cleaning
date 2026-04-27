@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
+// import { connectToDB } from "@/app/lib/mongodb"
 // import { sendEmail } from "../../lib/email/sendEmail"
 
 const MONGO_URI = process.env.MONGO_URI;
@@ -76,7 +77,7 @@ export async function POST(req) {
         });
         */
        
-        return NextResponse.json({ message: "Saved" }, { status: 201 });
+        return NextResponse.json({id: booking._id},{ message: "Saved" }, { status: 201 });
    
     } catch (err) {
         console.error(err);

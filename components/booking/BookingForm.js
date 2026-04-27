@@ -4,10 +4,13 @@ import { useState } from "react";
 import ServiceTypeButton from "../buttons/ServiceTypeButton";
 import FormField from "../booking/FormField"
 import { Inter } from 'next/font/google'
+import { useRouter } from "next/navigation"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function BookingForm(){
+
+    const router = useRouter();
 
     const [serviceType, setServiceType] = useState("home");
 
@@ -49,7 +52,10 @@ export default function BookingForm(){
         });
 
         if (!res.ok) throw new Error("Failed");
-        console.log("Submitted");
+
+        const data = await res.json()
+
+        router.push(`/book/${data.id}`);
 
         } catch (err) {
             console.error(err);
