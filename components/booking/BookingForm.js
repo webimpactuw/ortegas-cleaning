@@ -17,7 +17,6 @@ export default function BookingForm(){
         phone: "",
         serviceLocation: "Home",
         serviceType: "",
-        dateTime: ""
     });
 
     const handleChange = (e) => {
@@ -128,15 +127,6 @@ export default function BookingForm(){
                         <option value="Ban">Ban</option>
                         <option value="Orange">Orange</option>
                     </select>
-                </FormField>
-
-                <FormField label="Date & Time">
-                    <input
-                        name="dateTime" 
-                        type="datetime-local" 
-                        value={formData.dateTime}
-                        onChange={handleChange}
-                        className={inputClass}/>
                 </FormField>
 
                 <div className="flex justify-center">

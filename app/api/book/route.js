@@ -31,7 +31,6 @@ const bookingSchema = new mongoose.Schema({
     phone: String,
     serviceLocation: String,
     serviceType: String,
-    dateTime: String,
 });
 
 const Booking = mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
@@ -56,7 +55,6 @@ export async function POST(req) {
             <p>Email: ${body.email}</p>
             <p>Phone: ${body.phone}</p>
             <p>Service: ${body.serviceType}</p>
-            <p>Date: ${body.dateTime}</p>
         `;
 
         const emailUser = `
