@@ -130,9 +130,11 @@ export default function BookingForm(){
                         className={inputClass}
                     >
                         <option value="">Select a service</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Ban">Ban</option>
-                        <option value="Orange">Orange</option>
+                        <option value="Residential Cleaning">Residential Cleaning</option>
+                        <option value="Commercial Cleaning">Commercial Cleaning</option>
+                        <option value="Deep Cleaning">Deep Cleaning</option>
+                        <option value="Recurring Service">Recurring Service</option>
+
                     </select>
                 </FormField>
 
