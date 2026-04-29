@@ -1,6 +1,7 @@
 import BookingForm from "@/components/booking/BookingForm";
 import Navbar from "@/components/Navbar";
 import TermsConditions from "@/components/booking/TermsConditions";
+import BookingLookup from "@/components/booking/BookingLookup";
 
 
 // book to label page; to be changed
@@ -14,7 +15,7 @@ export default function Book() {
                     Book a Service
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     <div className="flex">
                         <BookingForm/>
                     </div>
@@ -24,8 +25,13 @@ export default function Book() {
                     </div>
                     
                 </div>
+
+                <div className="flex flex-col items-center">
+                    <BookingLookup/>
+                </div>
             
             </div>
+            
             
         </div>
     );

@@ -32,6 +32,7 @@ const bookingSchema = new mongoose.Schema({
     phone: String,
     serviceLocation: String,
     serviceType: String,
+    status: String,
 });
 
 const Booking = mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
@@ -77,7 +78,10 @@ export async function POST(req) {
         });
         */
        
-        return NextResponse.json({id: booking._id},{ message: "Saved" }, { status: 201 });
+        return NextResponse.json(
+            {id: booking._id, message: "Saved" }, 
+            { status: 201 }
+        );
    
     } catch (err) {
         console.error(err);

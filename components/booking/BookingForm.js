@@ -20,6 +20,7 @@ export default function BookingForm(){
         phone: "",
         serviceLocation: "Home",
         serviceType: "",
+        status: "Active",
     });
 
     const handleChange = (e) => {
@@ -66,10 +67,10 @@ export default function BookingForm(){
 
     return (
 
-        <div className="flex-1 flex px-6 py-12">
+        <div className="flex h-full px-6 py-12">
 
             <form onSubmit={handleSubmit} 
-            className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl shadow-lg p-6 space-y-5" style={{ background: "var(--gradient-bookForm)" }}>
+            className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl shadow-lg p-6 flex flex-col gap-4 md:justify-between" style={{ background: "var(--gradient-bookForm)" }}>
 
                 <FormField label="Full Name *">
                     <input 
@@ -138,7 +139,7 @@ export default function BookingForm(){
                 <div className="flex justify-center">
                     <button
                         type="submit"
-                        className="w-24 bg-white text-[#4A6B8A] py-3 rounded-xl hover:opacity-90 transition">
+                        className="w-24 font-[inter] bg-white text-[#4A6B8A] py-3 rounded-xl hover:opacity-80 cursor-pointer transition">
                             Submit
                     </button>
                 </div>

@@ -17,7 +17,7 @@ export default function Cancel() {
                     <h2 className="font-[Playfair_Display] font-semibold text-3xl text-center tracking-normal text-[#4A6B8A] mb-10">
                         Your booking has been cancelled
                     </h2>
-                    <p className="pb-10">
+                    <p className="pb-10 font-[inter]">
                         We're sorry to see you go. Your cancelation has been processed successfully.
                     </p>
                 </div>
@@ -38,7 +38,6 @@ export default function Cancel() {
                 </div>
 
             </BookingLayout>
-
 
         </div>
     );
