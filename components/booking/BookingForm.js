@@ -14,6 +14,36 @@ export default function BookingForm(){
 
     const [serviceType, setServiceType] = useState("home");
 
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()){
+            newErrors.name = "Name is required";
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.email){
+            newErrors.email = "Email is required";
+        } else if (!emailRegex.test(formData.email)){
+            newErrors.email = "Invalid email format";
+        }
+         
+        const phoneRegex = /^\d{10}$/;
+        if (!formData.phone) {
+            newErrors.phone = "Phone is required";
+        } else if (!phoneRegex.test(formData.phone.replace(/\D/g, ""))) {
+            newErrors.phone = "Enter a valid 10-digit phone number";
+        }
+
+        if (!formData.serviceType) {
+            newErrors.serviceType = "please select a service";
+        }
+
+        return newErrors;
+    }
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -42,6 +72,17 @@ export default function BookingForm(){
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const validationErrors = validate();
+
+        console.log(validationErrors);
+
+        if (Object.keys(validationErrors).length > 0){
+            setErrors(validationErrors);
+            return;
+        }
+
+        setErrors({});
 
         // database api
         try {
@@ -78,7 +119,8 @@ export default function BookingForm(){
                         type="text" 
                         value={formData.name}
                         onChange={handleChange}
-                        className={inputClass}/>
+                        className={inputClass}
+                        placeholder={errors.name}/>
                 </FormField>
 
                 <FormField label="Email *">
@@ -87,7 +129,8 @@ export default function BookingForm(){
                         type="email"
                         value={formData.email}
                         onChange={handleChange} 
-                        className={inputClass}/>
+                        className={inputClass}
+                        placeholder={errors.email}/>
                 </FormField>
 
                 <FormField label="Phone Number *">
@@ -96,7 +139,8 @@ export default function BookingForm(){
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange} 
-                        className={inputClass}/>
+                        className={inputClass}
+                        placeholder={errors.phone}/>
                 </FormField>
 
 
@@ -138,15 +182,26 @@ export default function BookingForm(){
                     </select>
                 </FormField>
 
-                <div className="flex justify-center">
+                <div className="flex flex-col items-center">
                     <button
                         type="submit"
                         className="w-24 font-[inter] bg-white text-[#4A6B8A] py-3 rounded-xl hover:opacity-80 cursor-pointer transition">
                             Submit
                     </button>
+
+                    {(() => {
+                        const firstError = Object.values(errors)[0];
+                        return (
+                            <div className="flex h-3 mt-5 items-center justify-center">
+                                <p className={`text-red-400 text-md font-semibold text-center font-[inter] transition-opacity duration-200 ${firstError ? "opacity-100" : "opacity-0"}`}>
+                                    {firstError || "."}
+                                </p>
+                            </div>
+                        );
+                    })()}
                 </div>
 
-                <p className="text-sm">
+                <p className="text-sm text-center font-[inter]">
                     By submitting this booking, you acknowledge that you have read and agree to our terms of service
                 </p>
                 

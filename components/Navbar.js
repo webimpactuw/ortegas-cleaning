@@ -9,12 +9,15 @@ export default function Navbar() {
     <nav className="flex justify-between items-center px-4 shadow-md/20" style={{ background: "var(--color-navbar-bg)" }}>
       < Link href="/" > <Image src={logo} alt="Home" width={64} height={64} className="h-24 w-auto object-contain" /></Link >
 
-      <div className="font-bold text-lg flex gap-8 items-center">
+      <div className="font-bold text-lg gap-8 items-center hidden md:flex">
         <Link href="/services">Services</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
         <BookNow />
+      </div>
+      <div className="md:hidden">
+        placeholder *ellipsis*
       </div>
     </nav >
   );
