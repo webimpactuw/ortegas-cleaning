@@ -8,8 +8,8 @@ export default function OurWork() {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
             <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
 
-            <div className="font-[600] text-[2.2rem] font-[Playfair_Display] text-[#364B60]">Our Work</div>
-            <div className="font-[500] text-[1.2rem] font-[Roboto] text-[#364B60]">See the incredible transformation our team delivers.</div>
+            <div className="font-[700] text-[3.1rem] font-[Playfair_Display] text-[#214A60]">Our Work</div>
+            <div className="font-[400] text-[1.2rem] font-[Inter] text-[#52677A]">Discover our portfolio of exceptional cleaning projects</div>
         </div>
     );
 }
