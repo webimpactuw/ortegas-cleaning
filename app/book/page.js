@@ -7,7 +7,7 @@ import BookingLookup from "@/components/booking/BookingLookup";
 // book to label page; to be changed
 export default function Book() {
     return (
-        <div className="min-h-screen bg-[#f6f5f2]">
+        <div className="min-h-screen bg-gradient-to-b from-[#EFF6FF] to-[#F4EBDC]">
             <Navbar/>
             <div className="max-w-6xl mx-auto px-6 py-12">
 
@@ -20,7 +20,7 @@ export default function Book() {
                         <BookingForm/>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex">  
                         <TermsConditions/>
                     </div>
                     

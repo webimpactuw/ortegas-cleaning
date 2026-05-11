@@ -3,21 +3,60 @@ import BookingLayout from "@/components/booking/BookingLayout";
 import { ObjectID } from "mongodb"
 import Image from "next/image";
 import hero_icon from "../../../public/hero_icon.png";
+import type_icon from "../../../public/type_icon.png";
 import { Inter } from 'next/font/google'
 import InfoTile from "@/components/InfoTile";
 import CancelBooking from "@/components/buttons/CancelBooking";
+import mongoose from "mongoose";
 
 //import { connectToDB } from "@/app/lib/mongodb"
 
+const inter = Inter({ subsets: ['latin'] })
 
-// book to label page; to be changed
+const MONGO_URI = process.env.MONGO_URI;
+
+let cached = global.mongoose;
+
+if (!cached) {
+    cached = global.mongoose = { conn: null };
+}
+
+async function connectDB(){
+    if (cached.conn) return cached.conn;
+
+    cached.conn = await mongoose.connect(MONGO_URI);
+
+    return cached.conn;
+}
+
+const bookingSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    address: String,
+    serviceLocation: String,
+    frequency: String,
+    status: String
+});
+
+const Booking = 
+    mongoose.models.Booking || 
+    mongoose.model("Booking", bookingSchema);
+
 export default async function BookingPage({ params }) {
+
     const { id } = await params;
+
+    await connectDB();
+
+    const booking = await Booking.findById(id).lean();
 
     return (
 
         <div className="min-h-screen bg-gradient-to-b from-[#EFF6FF] to-[#F4EBDC]">
+            
             <Navbar/>
+            
             <BookingLayout>
                 <Image src={hero_icon} alt="ortega's cleaning logo" className="z-1 scale-50 md:scale-50"></Image>
 
@@ -36,15 +75,39 @@ export default async function BookingPage({ params }) {
                     </p>
                 </InfoTile>
 
-                <div className="flex">
+                <div className="flex py-4">
                     <InfoTile>
-                        info one
+                        <div className="flex flex-col items-center gap-2">
+                            <Image src={type_icon} alt="" className=""/>
+                            <p className="font-[inter] font-normal text-sm text-gray-600">
+                                NAME
+                            </p>
+                            <h2 className="font-[inter] text-xl font-semibold text-[#2E4E65]">
+                                {booking.name}
+                            </h2>
+                        </div>
                     </InfoTile>
                     <InfoTile>
-                        info two
+                        <div className="flex flex-col items-center gap-2">
+                            <Image src={type_icon} alt="" className=""/>
+                            <p className="font-[inter] font-normal text-sm text-gray-600">
+                                SERVICE
+                            </p>
+                            <h2 className="font-[inter] text-xl font-semibold text-[#2E4E65]">
+                                {booking.serviceLocation}
+                            </h2>
+                        </div>            
                     </InfoTile>
                     <InfoTile>
-                        info three
+                        <div className="flex flex-col items-center gap-2">
+                            <Image src={type_icon} alt="" className=""/>
+                            <p className="font-[inter] font-normal text-sm text-gray-600">
+                                FREQUENCY
+                            </p>
+                            <h2 className="font-[inter] text-xl font-semibold text-[#2E4E65]">
+                                {booking.frequency}
+                            </h2>
+                        </div>            
                     </InfoTile>
 
                 </div>

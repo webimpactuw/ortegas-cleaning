@@ -18,8 +18,9 @@ const bookingSchema = new mongoose.Schema({
     name: String,
     email: String,
     phone: String,
+    address: String,
     serviceLocation: String,
-    serviceType: String,
+    frequency: String,
     status: String,
 });
 

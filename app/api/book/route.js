@@ -30,8 +30,9 @@ const bookingSchema = new mongoose.Schema({
     name: String,
     email: String,
     phone: String,
+    address: String,
     serviceLocation: String,
-    serviceType: String,
+    frequency: String,
     status: String,
 });
 
@@ -49,34 +50,6 @@ export async function POST(req) {
 
         const booking = new Booking(body);
         await booking.save();
-
-        /*
-        const emailOwner = `
-            <h2>New Booking</h2>
-            <p>Name: ${body.name}</p>
-            <p>Email: ${body.email}</p>
-            <p>Phone: ${body.phone}</p>
-            <p>Service: ${body.serviceType}</p>
-        `;
-
-        const emailUser = `
-            <p>Thanks ${body.name}, we'll contact you soon.</p>
-            <p>To view or cancel your booking, visit the link below.</p>
-            <a href="https://localhost:3000/book/view">View my booking</a>
-        `;
-
-        await sendEmail({
-            to: "owner@gmail.com",
-            subject: "New Booking Request",
-            emailOwner,
-        });
-
-        await sendEmail({
-            to: body.email,
-            subject: "We received your booking!",
-            emailUser,
-        });
-        */
        
         return NextResponse.json(
             {id: booking._id, message: "Saved" }, 

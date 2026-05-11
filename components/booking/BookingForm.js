@@ -12,8 +12,6 @@ export default function BookingForm(){
 
     const router = useRouter();
 
-    const [serviceType, setServiceType] = useState("home");
-
     const [errors, setErrors] = useState({});
 
     const validate = () => {
@@ -37,8 +35,12 @@ export default function BookingForm(){
             newErrors.phone = "Enter a valid 10-digit phone number";
         }
 
-        if (!formData.serviceType) {
-            newErrors.serviceType = "please select a service";
+        if (!formData.address.trim()){
+            newErrors.address = "Address is required";
+        }
+
+        if (!formData.frequency) {
+            newErrors.frequency = "Please select a frequency";
         }
 
         return newErrors;
@@ -46,10 +48,11 @@ export default function BookingForm(){
 
     const [formData, setFormData] = useState({
         name: "",
-        email: "",
         phone: "",
+        email: "",
+        address: "",
         serviceLocation: "Home",
-        serviceType: "",
+        frequency: "",
         status: "Active",
     });
 
@@ -60,13 +63,6 @@ export default function BookingForm(){
         setFormData({
             ...formData,
             [name]: value
-        });
-    };
-
-    const setLocation = (location) => {
-        setFormData({
-            ...formData,
-            serviceLocation: location
         });
     };
 
@@ -104,24 +100,39 @@ export default function BookingForm(){
         }
     };
 
-    const inputClass = "font-[inter] font-normal w-full mt-1 p-3 border-white/20 text-white rounded-lg bg-white/10 backdrop-blur-md";
+    const inputClass = "font-[inter] font-normal w-full mt-1 p-3 border border-gray-600 text-[#2E4E65] rounded-lg bg-white/10 backdrop-blur-md";
 
     return (
 
         <div className="flex h-full px-6 py-12">
 
             <form onSubmit={handleSubmit} 
-            className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl shadow-lg p-6 flex flex-col gap-4 md:justify-between" style={{ background: "var(--gradient-bookForm)" }}>
+            className="w-full h-full bg-white text-gray-600 rounded-2xl shadow-lg p-6 flex flex-col gap-4 md:justify-between">
 
-                <FormField label="Full Name *">
-                    <input 
-                        name="name"
-                        type="text" 
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={inputClass}
-                        placeholder={errors.name}/>
-                </FormField>
+                <div className="flex gap-5">
+                    <div className="w-1/2">
+                        <FormField label="Full Name *">
+                            <input 
+                                name="name"
+                                type="text" 
+                                value={formData.name}
+                                onChange={handleChange}
+                                className={inputClass}
+                                placeholder={errors.name}/>
+                        </FormField>
+                    </div>
+                    <div className="w-1/2">
+                        <FormField label="Phone Number *">
+                            <input 
+                                name="phone"
+                                type="tel"
+                                value={formData.phone}
+                                onChange={handleChange} 
+                                className={inputClass}
+                                placeholder={errors.phone}/>
+                        </FormField>
+                    </div>
+                </div>
 
                 <FormField label="Email *">
                     <input 
@@ -133,16 +144,15 @@ export default function BookingForm(){
                         placeholder={errors.email}/>
                 </FormField>
 
-                <FormField label="Phone Number *">
+                <FormField label="Address *">
                     <input 
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
+                        name="address"
+                        type="text"
+                        value={formData.address}
                         onChange={handleChange} 
-                        className={inputClass}
-                        placeholder={errors.phone}/>
+                        className={inputClass}  
+                        placeholder={errors.address}/>
                 </FormField>
-
 
                 <FormField label="Select a Service">
 
@@ -150,34 +160,47 @@ export default function BookingForm(){
                         <ServiceTypeButton
                             label="Home"
                             icon="🏠"
-                            active={serviceType === "home"}
-                            onClick={() => setServiceType("home")}
+                            active={formData.serviceLocation === "Home"}
+                            onClick={() => 
+                                setFormData({
+                                    ...formData,
+                                    serviceLocation: "Home"
+                                })
+                            }
                             color="bg-orange-100 text-orange-900"
                             activeColor="bg-orange-200 text-orange-900"
                         />
                         <ServiceTypeButton
                             label="Office"
                             icon="🏢"
-                            active={serviceType === "office"}
-                            onClick={() => setServiceType("office")}
+                            active={formData.serviceLocation === "Office"}
+                            onClick={() => 
+                                setFormData({
+                                    ...formData,
+                                    serviceLocation: "Office"
+                                })
+                            }
                             color="bg-blue-100 text-blue-900"
                             activeColor="bg-blue-300 text-blue-900"
                         />
                     </div>
                 </FormField>
 
-                <FormField label="Service Type">
+                <FormField label="Frequency">
                     <select 
-                        name="serviceType" 
-                        value={formData.serviceType}
+                        name="frequency" 
+                        value={formData.frequency}
                         onChange={handleChange} 
                         className={inputClass}
                     >
-                        <option value="">Select a service</option>
-                        <option value="Residential Cleaning">Residential Cleaning</option>
-                        <option value="Commercial Cleaning">Commercial Cleaning</option>
-                        <option value="Deep Cleaning">Deep Cleaning</option>
-                        <option value="Recurring Service">Recurring Service</option>
+                        <option value=""></option>
+                        <option value="One Time">One Time</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Biweekly">Biweekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Move In">Move In</option>
+                        <option value="Move Out">Move Out</option>
+
 
                     </select>
                 </FormField>
@@ -185,7 +208,7 @@ export default function BookingForm(){
                 <div className="flex flex-col items-center">
                     <button
                         type="submit"
-                        className="w-24 font-[inter] bg-white text-[#4A6B8A] py-3 rounded-xl hover:opacity-80 cursor-pointer transition">
+                        className="w-24 font-[inter] bg-[#224a60] text-white py-3 rounded-xl hover:opacity-80 cursor-pointer transition">
                             Submit
                     </button>
 
