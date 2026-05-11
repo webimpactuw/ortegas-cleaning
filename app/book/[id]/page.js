@@ -36,6 +36,19 @@ export default async function BookingPage({ params }) {
                     </p>
                 </InfoTile>
 
+                <div className="flex">
+                    <InfoTile>
+                        info one
+                    </InfoTile>
+                    <InfoTile>
+                        info two
+                    </InfoTile>
+                    <InfoTile>
+                        info three
+                    </InfoTile>
+
+                </div>
+
                 <CancelBooking id={id}/>
                 
             </BookingLayout>
