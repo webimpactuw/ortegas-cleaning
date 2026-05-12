@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 // import { connectToDB } from "@/app/lib/mongodb"
-// import { sendEmail } from "../../lib/email/sendEmail"
+import { sendCustomerEmail, sendOwnerEmail } from "@/app/lib/email/sendEmail";
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -46,10 +46,13 @@ export async function POST(req) {
 
         const body = await req.json();
 
-        //console.log("Received:", body);
-
         const booking = new Booking(body);
+
         await booking.save();
+
+        await sendCustomerEmail(booking, "booking");
+
+        await sendOwnerEmail(booking, "booking");
        
         return NextResponse.json(
             {id: booking._id, message: "Saved" }, 

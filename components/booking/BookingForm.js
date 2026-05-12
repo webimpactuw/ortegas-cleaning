@@ -3,9 +3,8 @@
 import { useState } from "react";
 import ServiceTypeButton from "../buttons/ServiceTypeButton";
 import FormField from "../booking/FormField"
-import { Inter } from 'next/font/google'
 import { useRouter } from "next/navigation"
-
+import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function BookingForm(){

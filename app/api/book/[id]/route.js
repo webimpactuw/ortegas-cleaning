@@ -33,5 +33,12 @@ export async function GET(req, { params }) {
         return NextResponse.json({ error: "Not Found" }, { status: 404 });
     }
 
+    if (booking.status === "cancelled"){
+        return NextResponse.json(
+            { error: "Booking cancelled" },
+            { status: 403 }
+        )
+    }
+
     return NextResponse.json(booking);
 }

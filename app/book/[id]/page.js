@@ -52,6 +52,27 @@ export default async function BookingPage({ params }) {
 
     const booking = await Booking.findById(id).lean();
 
+    if (!booking || booking.status === "cancelled" ) {
+
+        return (
+            <div className="min-h-screen bg-gradient-to-b from-[#EFF6FF] to-[#F4EBDC] flex flex-col">
+                <Navbar/>
+                <div className="flex flex-1 items-center justify-center">
+
+                    <div className="text-center">
+                        <h2 className="text-2xl font-semibold text-[#4A6B8A] font-[inter]">
+                            Booking not found or has been cancelled
+                        </h2>
+                        <p className="text-gray-600 mt-2 font-[inter]">
+                            Please check your booking ID or create a new booking
+                        </p>
+                    </div>
+                </div>
+            </div>
+        );
+
+    }
+
     return (
 
         <div className="min-h-screen bg-gradient-to-b from-[#EFF6FF] to-[#F4EBDC]">

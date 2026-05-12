@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
+import { sendCustomerEmail, sendOwnerEmail } from "@/app/lib/email/sendEmail";
+
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -27,16 +29,32 @@ const bookingSchema = new mongoose.Schema({
 const Booking = mongoose.models.Booking || mongoose.model("Booking", bookingSchema);
 
 export async function POST(req, { params }) {
+
     const { id } = await params;
 
     try {
         await connectDB();
 
-        await Booking.findByIdAndUpdate(id, {
-            status: "cancelled",
-        });
+        const booking = await Booking.findById(id);
 
-        return NextResponse.json({ message: "Booking cancelled" });
+        if (!booking) {
+            return NextResponse.json(
+                { error: "Booking not found" },
+                { status: 404 }
+            );
+        }
+
+        booking.status = "cancelled";
+        await booking.save()
+
+        await sendCustomerEmail(booking, "cancellation");
+        
+        await sendOwnerEmail(booking, "cancellation");
+
+        return NextResponse.json({
+            message: "Booking Cancelled"
+        });
+               
     } catch (err) {
         console.error(err);
         return NextResponse.json({ error: "Failed" }, { status: 500 });
