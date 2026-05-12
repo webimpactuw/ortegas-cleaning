@@ -8,6 +8,7 @@ import { Inter } from 'next/font/google'
 import InfoTile from "@/components/InfoTile";
 import CancelBooking from "@/components/buttons/CancelBooking";
 import mongoose from "mongoose";
+import ContactTag from "@/components/contactTag";
 
 //import { connectToDB } from "@/app/lib/mongodb"
 
@@ -75,7 +76,7 @@ export default async function BookingPage({ params }) {
                     </p>
                 </InfoTile>
 
-                <div className="flex py-4">
+                <div className="flex w-full max-w-220 pt-4">
                     <InfoTile>
                         <div className="flex flex-col items-center gap-2">
                             <Image src={type_icon} alt="" className=""/>
@@ -111,6 +112,8 @@ export default async function BookingPage({ params }) {
                     </InfoTile>
 
                 </div>
+
+                <ContactTag/>
 
                 <CancelBooking id={id}/>
                 
