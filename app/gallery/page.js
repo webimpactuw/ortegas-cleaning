@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import OurWork from "@/components/gallery/OurWork";
 import GalleryStatistics from "@/components/gallery/GalleryStatistics";
 import GalleryMain from "@/components/gallery/GalleryMain";
+import MeetUniqueNeeds from "@/components/gallery/MeetUniqueNeeds";
 
 // gallery to label page; to be changed
 export default function Gallery() {
@@ -11,6 +12,7 @@ export default function Gallery() {
             <OurWork/>
             <GalleryMain/>
             <GalleryStatistics/>
+            <MeetUniqueNeeds/>
         </div>
     );
 }

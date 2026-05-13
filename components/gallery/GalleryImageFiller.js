@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from 'react';
 import { motion } from "framer-motion";
 
 
-export default function GalleryImage({image, altText, caption, index, pipIndex}) {
+export default function GalleryImageFiller({index, pipIndex}) {
 
     const positionVariants = {
         hidden: {
@@ -40,7 +38,6 @@ export default function GalleryImage({image, altText, caption, index, pipIndex})
             width: "90px",
             height: "310px",
             opacity: "20%",
-            zIndex: "0",
         },
 
         rightOuter: {
@@ -49,30 +46,8 @@ export default function GalleryImage({image, altText, caption, index, pipIndex})
             width: "90px",
             height: "310px",
             opacity: "20%",
-            zIndex: "0",
         },
 
-        center: {
-            display: "block",
-            marginRight: "0px",
-            marginLeft: "0px",
-            opacity: "100%",
-            width: "400px",
-            height: "450px",
-            zIndex: "1"
-        }
-    }
-
-    const textVariants = {
-        center: {
-            display: "block",
-            opacity: "100%"
-        },
-
-        hidden: {
-            display: "none",
-            opacity: "0%"
-        }
     }
 
     const pipIndexToPositionVariant = function(index, pipIndex) {
@@ -86,9 +61,6 @@ export default function GalleryImage({image, altText, caption, index, pipIndex})
             return "left";
         }
 
-        else if (difference === 0) {
-            return "center";
-        }
 
         else if (difference === 1) {
             return "right";
@@ -109,25 +81,6 @@ export default function GalleryImage({image, altText, caption, index, pipIndex})
 
             className="relative"
         >
-            <Image className="w-[100%] h-[100%] rounded-[16px] absolute p-1 bg-white" src={image} alt={altText}></Image>
-
-            <motion.div className="absolute text-[#F4EBDD] z-1 font-[Inter] font-[500] text-[0.9rem] bottom-18 left-4 px-3 py-1 bg-[#E4CFAF4D]
-                            rounded-[16px]"
-                            
-                variants={textVariants}
-                initial="hidden"
-                animate={index == pipIndex.index ? "center" : "hidden"}
-            
-            
-            >Residential</motion.div>
-
-            <motion.div className="absolute text-[#F4EBDD] z-1 font-[Playfair_Display] font-[700] text-[1.8rem] bottom-6 left-4"
-                variants={textVariants}
-                initial="hidden"
-                animate={index == pipIndex.index ? "center" : "hidden"}
-            >{caption}</motion.div>
-
-            <span className="absolute rounded-[16px] w-[100%] h-[100%] object-fit bg-linear-to-b from-[#00000000] via-[#00000033] via-60% to-[#000000B2] to-95%"></span>
 
         </motion.div>
     );
