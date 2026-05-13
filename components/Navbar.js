@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/logo_hallow.png";
+import logo from "../public/hollow_logo.png";
 import BookNow from "./buttons/BookNow";
 
 // Placeholder code to start Navbar; can be changed

@@ -59,14 +59,14 @@ export default async function BookingPage({ params }) {
                 <Navbar/>
                 <div className="flex flex-1 items-center justify-center">
 
-                    <div className="text-center">
+                    <InfoTile>
                         <h2 className="text-2xl font-semibold text-[#4A6B8A] font-[inter]">
                             Booking not found or has been cancelled
                         </h2>
                         <p className="text-gray-600 mt-2 font-[inter]">
                             Please check your booking ID or create a new booking
                         </p>
-                    </div>
+                    </InfoTile>
                 </div>
             </div>
         );

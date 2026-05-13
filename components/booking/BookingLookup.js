@@ -20,7 +20,7 @@ export default function BookingLookup() {
                 Already have a booking?
             </h3>
 
-            <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col md:flex-row gap-10 w-full">
                 <input 
                     value={id} 
                     onChange={(e) => setId(e.target.value)}
