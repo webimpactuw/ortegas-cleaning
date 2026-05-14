@@ -1,28 +1,18 @@
 import Navbar from "@/components/Navbar";
 import ReviewPageCard from "@/components/ReviewPageCard";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
 
-const reviews = [
-  {
-    reviewer: "Maria Rodriguez",
-    reviewText: "They've been cleaning my office for months. Consistent quality and friendly service every time!",
-    numStars: 5,
-  },
-  {
-    reviewer: "Sarah Mitchell",
-    reviewText: "Ortega's team transformed my home! Professional, thorough, and incredibly trustworthy. Highly recommend!",
-    numStars: 5,
-  },
-  {
-    reviewer: "David Chen",
-    reviewText: "Best cleaning service we've ever used. Always on time, detail-oriented, and reasonably priced.",
-    numStars: 5,
-  },
-];
+const REVIEWS_QUERY = `*[_type == "review"] | order(_createdAt desc) {
+  _id,
+  reviewer,
+  reviewText,
+  numStars
+}`;
 
-const allReviews = [...reviews, ...reviews, ...reviews];
+export default async function ReviewsPage() {
+  const reviews = await client.fetch(REVIEWS_QUERY);
 
-export default function ReviewsPage() {
   return (
     <div>
       <Navbar />
@@ -38,16 +28,20 @@ export default function ReviewsPage() {
           Hear from our customers why they choose Ortega&apos;s House Cleaning
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
-          {allReviews.map((review, index) => (
-            <ReviewPageCard
-              key={index}
-              numStars={review.numStars}
-              reviewer={review.reviewer}
-              reviewText={review.reviewText}
-            />
-          ))}
-        </div>
+        {reviews.length === 0 ? (
+          <p className="font-[inter] text-[#4A4A4ACC]">No reviews yet. Check back soon!</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+            {reviews.map((review) => (
+              <ReviewPageCard
+                key={review._id}
+                numStars={review.numStars}
+                reviewer={review.reviewer}
+                reviewText={review.reviewText}
+              />
+            ))}
+          </div>
+        )}
 
         <Link
           href="#"
