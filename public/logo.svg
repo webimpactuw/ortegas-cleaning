@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 400 400"
+   width="400"
+   height="400"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="ortegas_house_cleaning_logo.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4405142"
+     inkscape:cx="318.98332"
+     inkscape:cy="250.25786"
+     inkscape:window-width="1720"
+     inkscape:window-height="1382"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg10" />
+  <!-- Background -->
+  <rect
+     width="400"
+     height="400"
+     fill="#F5EBD0"
+     id="rect1"
+     style="fill:none" />
+  <g
+     fill="none"
+     stroke="#2B3A5C"
+     stroke-width="6"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g2">
+    <!-- Main stroke: peak → down-left roof → down left wall → right across bottom to middle -->
+    <path
+       d="M 200 85 L 110 155 L 110 275 L 200 275"
+       id="path1" />
+    <!-- The O / ring, tangent to the bottom line at (200, 275) -->
+    <circle
+       cx="200"
+       cy="220"
+       r="55"
+       id="circle1" />
+    <!-- Right roof slope + bigger chimney, right side continues down as implied right wall -->
+    <path
+       d="m 200,85 45,50 v -35 h 40 l -0.6942,50.73882"
+       id="path2"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <!-- Sparkles inside the O -->
+  <g
+     fill="#2B3A5C"
+     id="g6">
+    <path
+       d="M 185 204 Q 187 210 193 212 Q 187 214 185 220 Q 183 214 177 212 Q 183 210 185 204 Z"
+       id="path3" />
+    <path
+       d="M 222 216 Q 223 219 226 220 Q 223 221 222 224 Q 221 221 218 220 Q 221 219 222 216 Z"
+       id="path4" />
+    <path
+       d="M 185 236 Q 186 240 190 241 Q 186 242 185 246 Q 184 242 180 241 Q 184 240 185 236 Z"
+       id="path5" />
+    <path
+       d="M 215 230 Q 217 236 222 237 Q 217 238 215 244 Q 213 238 208 237 Q 213 236 215 230 Z"
+       id="path6" />
+  </g>
+  <!-- Windows: 4 filled squares with gaps, centered under the peak -->
+  <g
+     fill="#2B3A5C"
+     id="g9">
+    <rect
+       x="190"
+       y="120"
+       width="9"
+       height="9"
+       id="rect6" />
+    <rect
+       x="201"
+       y="120"
+       width="9"
+       height="9"
+       id="rect7" />
+    <rect
+       x="190"
+       y="131"
+       width="9"
+       height="9"
+       id="rect8" />
+    <rect
+       x="201"
+       y="131"
+       width="9"
+       height="9"
+       id="rect9" />
+  </g>
+  <!-- Wordmark -->
+  <text
+     x="200"
+     y="322"
+     font-family="Georgia, 'Times New Roman', serif"
+     font-size="44"
+     fill="#2B3A5C"
+     text-anchor="middle"
+     letter-spacing="2"
+     id="text9">ORTEGA'S</text>
+  <text
+     x="200"
+     y="352"
+     font-family="Georgia, 'Times New Roman', serif"
+     font-size="15"
+     fill="#2B3A5C"
+     text-anchor="middle"
+     letter-spacing="6"
+     id="text10">HOUSE CLEANING</text>
+</svg>

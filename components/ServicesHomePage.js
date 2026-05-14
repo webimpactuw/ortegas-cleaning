@@ -1,5 +1,5 @@
 import ServiceCard from "./ServiceCard";
-import House from "../public/House.svg";
+import House from "../public/logo.svg";
 import Building from "../public/Building.svg";
 import { Inter } from 'next/font/google'
 

@@ -8,12 +8,14 @@
   --color-navbar-bg: #FFFEF8;
   --color-brand-blue: #4A90E2;
   --color-brand-dark: #2C3E50;
+  --color-banner-bg: #2E4E65;
   --gradient-btn: linear-gradient(to right, var(--color-brand-dark), var(--color-brand-blue));
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-banner-bg: var(--color-banner-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
