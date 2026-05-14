@@ -35,7 +35,7 @@ function MapUpdater({ selectedArea }) {
   return null;
 }
 
-export default function ServiceMap({ areas, selectedArea }) {
+export default function ServiceMap({ areas, selectedArea, className }) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function ServiceMap({ areas, selectedArea }) {
   if (!isMounted) return null;
 
   return (
-    <div className="bg-[#FFFEF8] p-4 rounded-2xl overflow-hidden shadow-lg h-150">
+    <div className={className ?? "bg-[#FFFEF8] p-4 rounded-2xl overflow-hidden shadow-lg h-150"}>
         <MapContainer
             center={[47.2462, -122.1793]}
             zoom={11}

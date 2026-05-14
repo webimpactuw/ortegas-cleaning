@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #111111;
@@ -30,5 +31,14 @@ body {
   color: var(--foreground);
   font-family: Georgia, Times New Roman, serif;
 }
+
+@theme {
+  --color-custom-blue: #4a6b8a;
+}
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+}
+
 
 
